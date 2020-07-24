@@ -1,0 +1,24 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class Main
+{
+    void duplicate(int a[], int n)  
+    { 
+        int c[] = new int[n]; 
+        int i; 
+        for (i = 0; i < n; i++)  
+        { 
+            if (c[a[i]] == 1) 
+                System.out.print(a[i] + " "); 
+            else
+                c[a[i]]++; 
+        } 
+    } 
+    public static void main(String[] args) 
+    { 
+        Main repeat = new Main(); 
+        int a[] = {1, 2, 3, 1, 3, 6, 6}; 
+        int x = a.length; 
+        repeat.duplicate(a, x); 
+    } 
+} 
