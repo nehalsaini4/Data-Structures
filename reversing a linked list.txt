@@ -1,0 +1,50 @@
+class Main
+{ 
+    static Node head; 
+    static class Node 
+    { 
+        int data; 
+        Node next; 
+        Node(int d) 
+        { 
+            data = d; 
+            next = null; 
+        } 
+    } 
+    Node reverse(Node node) 
+    { 
+        Node pre = null; 
+        Node cur = node; 
+        Node next = null; 
+        while (cur != null) 
+        { 
+            next = cur.next; 
+            cur.next = pre; 
+            pre = cur; 
+            cur = next; 
+        } 
+        node = pre; 
+        return node; 
+    }
+    void printList(Node node) 
+    { 
+        while (node != null) { 
+            System.out.print(node.data + " "); 
+            node = node.next; 
+        } 
+    } 
+    public static void main(String[] args) 
+    { 
+        Main list = new Main(); 
+        list.head = new Node(53); 
+        list.head.next = new Node(64); 
+        list.head.next.next = new Node(85); 
+        list.head.next.next.next = new Node(91);
+        System.out.println("Actual"); 
+        list.printList(head); 
+        head = list.reverse(head); 
+        System.out.println(""); 
+        System.out.println("Reversed"); 
+        list.printList(head); 
+    } 
+} 
